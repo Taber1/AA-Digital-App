@@ -1,0 +1,9 @@
+const String splash = '/splash';
+const String dashboard = '/dashboard';
+const String home = '/home';
+const String aboutUs = '/aboutUs';
+const String businessConsulting = '/businessConsulting';
+const String foodPhotography = '/foodPhotography';
+const String webNsocail = '/webNsocail';
+const String menuDesign = '/menuDesign';
+const String contactUs = '/contactUs';

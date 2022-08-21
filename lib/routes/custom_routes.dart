@@ -1,0 +1,38 @@
+import 'package:aa_digital/routes/route_names.dart';
+import 'package:aa_digital/views/about_screen.dart';
+import 'package:aa_digital/views/business_screen.dart';
+import 'package:aa_digital/views/contact_screen.dart';
+import 'package:aa_digital/views/dashboard_screen.dart';
+import 'package:aa_digital/error_screen.dart';
+import 'package:aa_digital/views/food_screen.dart';
+import 'package:aa_digital/views/home_screen.dart';
+import 'package:aa_digital/views/menu_screen.dart';
+import 'package:aa_digital/views/splash_screen.dart';
+import 'package:aa_digital/views/websocial_screen.dart';
+import 'package:flutter/material.dart';
+
+class CustomRoutes {
+  static Route<dynamic> allRoutes(RouteSettings setting) {
+    switch (setting.name) {
+      case splash:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
+      case dashboard:
+        return MaterialPageRoute(builder: (_) => const DashboardScreen());
+      case home:
+        return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case aboutUs:
+        return MaterialPageRoute(builder: (_) => const AboutUsScreen());
+      case businessConsulting:
+        return MaterialPageRoute(builder: (_) => const BusinessScreen());
+      case foodPhotography:
+        return MaterialPageRoute(builder: (_) => const FoodScreen());
+      case webNsocail:
+        return MaterialPageRoute(builder: (_) => const WebNSocialScreen());
+      case menuDesign:
+        return MaterialPageRoute(builder: (_) => const MenuScreen());
+      case contactUs:
+        return MaterialPageRoute(builder: (_) => const ContactUsScreen());
+    }
+    return MaterialPageRoute(builder: (_) => const ErrorScreen());
+  }
+}
