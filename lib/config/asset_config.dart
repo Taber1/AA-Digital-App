@@ -35,6 +35,8 @@ class AssetConfig {
       "assets/images/business_consulting/thumbnail 4.png";
   static const String kBusinessMenu5 =
       "assets/images/business_consulting/thumbnail 5.png";
+  static const String kSeePortfolio =
+      "assets/images/business_consulting/See Portfolio.png";
   static const String kFoodBG =
       "assets/images/food_photography/Upper Image.png";
   static const String kFoodCenter =

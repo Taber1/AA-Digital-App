@@ -13,29 +13,43 @@ class ContactUsScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Globals.greyColorDark,
-      body: Stack(children: [
-        Container(
-          height: getDeviceHeight(context) * 0.4,
-          width: getDeviceWidth(context),
-          alignment: Alignment.center,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(AssetConfig.kContactBG),
-                  fit: BoxFit.cover)),
-          child: const Text(
-            "Contact Us",
-            style: TextStyle(
-                color: Globals.whiteColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 40),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          Stack(
+            children: [
+              Container(
+                height: getDeviceHeight(context) * 0.4,
+                width: getDeviceWidth(context),
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(AssetConfig.kContactBG),
+                        fit: BoxFit.cover)),
+                child: const Text(
+                  "Contact Us",
+                  style: TextStyle(
+                      color: Globals.whiteColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40),
+                ),
+              ),
+              Positioned(
+                top: 80,
+                right: 15,
+                child: InkWell(
+                    onTap: () {
+                      scaffoldKey.currentState!.openEndDrawer();
+                    },
+                    child: Image.asset(AssetConfig.kMenuIcon)),
+              ),
+            ],
           ),
-        ),
-        SingleChildScrollView(
-            padding: const EdgeInsets.only(left: 5, right: 5, bottom: 30),
+          Padding(
+            padding: const EdgeInsets.only(left: 5, right: 5),
             child: Center(
               child: Column(
                 children: [
-                  SizedBox(height: getDeviceHeight(context) * 0.43),
+                  SizedBox(height: getDeviceHeight(context) * 0.01),
                   const Text(
                     "Our contact address",
                     style: TextStyle(
@@ -178,19 +192,37 @@ class ContactUsScreen extends StatelessWidget {
                           border: OutlineInputBorder()),
                     ),
                   ),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    margin: const EdgeInsets.only(top: 10),
+                    alignment: Alignment.center,
+                    color: Globals.redColor,
+                    width: getDeviceWidth(context) * 0.5,
+                    child: const Text(
+                      "Submit / Enviar",
+                      style: TextStyle(
+                          color: Globals.whiteColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
+                  )
                 ],
               ),
-            )),
-        Positioned(
-          top: 80,
-          right: 15,
-          child: InkWell(
-              onTap: () {
-                scaffoldKey.currentState!.openEndDrawer();
-              },
-              child: Image.asset(AssetConfig.kMenuIcon)),
-        ),
-      ]),
+            ),
+          ),
+          Container(
+            width: getDeviceWidth(context),
+            color: Globals.blackColor,
+            margin: const EdgeInsets.only(top: 30),
+            padding: const EdgeInsets.only(top: 10),
+            child: const Text(
+              "Copyright © AA Digital Solution",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey, fontSize: 15),
+            ),
+          ),
+        ]),
+      ),
       endDrawer: DrawerScreen(scaffoldKey: scaffoldKey),
     );
   }
