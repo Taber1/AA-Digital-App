@@ -53,7 +53,7 @@ class _ServicesDropdownState extends State<ServicesDropdown> {
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.pop(context);
+                    // Navigator.pop(context);
                     Navigator.pushReplacementNamed(context, businessConsulting);
                   },
                   child: const Text("Business Consulting",
@@ -67,7 +67,7 @@ class _ServicesDropdownState extends State<ServicesDropdown> {
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.pop(context);
+                    // Navigator.pop(context);
                     Navigator.pushReplacementNamed(context, foodPhotography);
                   },
                   child: const Text("Food Photography",
@@ -81,7 +81,7 @@ class _ServicesDropdownState extends State<ServicesDropdown> {
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.pop(context);
+                    // Navigator.pop(context);
                     Navigator.pushReplacementNamed(context, webNsocail);
                   },
                   child: const Text("Web & Social Media Design",
@@ -95,7 +95,7 @@ class _ServicesDropdownState extends State<ServicesDropdown> {
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.pop(context);
+                    // Navigator.pop(context);
                     Navigator.pushReplacementNamed(context, menuDesign);
                   },
                   child: const Text("Menu Design",

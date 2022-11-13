@@ -31,7 +31,7 @@ class CustomRoutes {
       case menuDesign:
         return MaterialPageRoute(builder: (_) => const MenuScreen());
       case contactUs:
-        return MaterialPageRoute(builder: (_) => const ContactUsScreen());
+        return MaterialPageRoute(builder: (_) => ContactUsScreen());
     }
     return MaterialPageRoute(builder: (_) => const ErrorScreen());
   }

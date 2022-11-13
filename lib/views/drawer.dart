@@ -41,7 +41,7 @@ class DrawerScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   child: InkWell(
                     onTap: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
                       Navigator.pushReplacementNamed(context, home);
                     },
                     child: const Text("HOME",
@@ -55,7 +55,7 @@ class DrawerScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   child: InkWell(
                     onTap: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
                       Navigator.pushReplacementNamed(context, aboutUs);
                     },
                     child: const Text("ABOUT US",
@@ -70,7 +70,7 @@ class DrawerScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 15.0),
                   child: InkWell(
                     onTap: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
                       Navigator.pushReplacementNamed(context, contactUs);
                     },
                     child: const Text("CONTACT US",

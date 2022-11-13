@@ -1,5 +1,5 @@
 class AssetConfig {
-  static const String kLogo = "assets/images/startup_logo/png2.png";
+  static const String kLogo = "assets/images/startup_logo/splash.png";
   static const String kSplashBG =
       "assets/images/startup_logo/Startup image.png";
   static const String kMenuIcon = "assets/images/menu_design/menu_bar.png";

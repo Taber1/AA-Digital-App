@@ -19,109 +19,116 @@ class FoodScreen extends StatelessWidget {
     ];
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     final controller = CarouselController();
-    return Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Globals.greyColorDark,
-        body: SingleChildScrollView(
-          child: Column(children: [
-            Stack(
-              children: [
-                Container(
-                  height: getDeviceHeight(context) * 0.4,
-                  width: getDeviceWidth(context),
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(AssetConfig.kFoodBG),
-                          fit: BoxFit.cover)),
-                  child: const Text(
-                    "Food\nPhotography",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Globals.whiteColor,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 40),
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: Globals.greyColorDark,
+          body: SingleChildScrollView(
+            child: Column(children: [
+              Stack(
+                children: [
+                  Container(
+                    height: getDeviceHeight(context) * 0.4,
+                    width: getDeviceWidth(context),
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(AssetConfig.kFoodBG),
+                            fit: BoxFit.cover)),
+                    child: const Text(
+                      "Food\nPhotography",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          color: Globals.whiteColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40),
+                    ),
                   ),
-                ),
-                Positioned(
-                  top: 80,
-                  right: 15,
-                  child: InkWell(
-                      onTap: () {
-                        scaffoldKey.currentState!.openEndDrawer();
-                      },
-                      child: Image.asset(AssetConfig.kMenuIcon)),
-                ),
-              ],
-            ),
-            Align(
-              heightFactor: 0.2,
-              child: Image.asset(AssetConfig.kFoodCenter),
-            ),
-            SizedBox(height: getDeviceHeight(context) * 0.1),
-            servicesDescription(
-                descrip:
-                    "We offer you a still life photography classification to"),
-            servicesDescription(
-                descrip: "make appealing still life photos of food. We have a"),
-            servicesDescription(
-                descrip:
-                    "specialization in business photography, the results of"),
-            servicesDescription(
-                descrip: "Which are utilized in ads, magazines, bundling,"),
-            servicesDescription(descrip: "menus, or cookbooks."),
-            SizedBox(height: getDeviceHeight(context) * 0.1),
-            const Text(
-              "Our Project",
-              style: TextStyle(
-                  color: Globals.redColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold),
-            ),
-            const Text(
-              "What we've been working on",
-              style: TextStyle(
-                  color: Globals.whiteColor,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold),
-            ),
-            CarouselSlider(
-              carouselController: controller,
-              options: CarouselOptions(
-                height: getDeviceHeight(context) * 0.2,
-                viewportFraction: 0.3,
+                  Positioned(
+                    top: 80,
+                    right: 15,
+                    child: InkWell(
+                        onTap: () {
+                          scaffoldKey.currentState!.openEndDrawer();
+                        },
+                        child: Image.asset(AssetConfig.kMenuIcon)),
+                  ),
+                ],
               ),
-              items: list
-                  .map((item) => Container(
-                        margin: const EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.cover, image: NetworkImage(item))),
-                      ))
-                  .toList(),
-            ),
-            SizedBox(height: getDeviceHeight(context) * 0.02),
-            InkWell(
-              onTap: () {
-                controller.nextPage();
-              },
-              child: Image.asset(AssetConfig.kSeePortfolio),
-            ),
-            Container(
-              width: getDeviceWidth(context),
-              color: Globals.blackColor,
-              margin: const EdgeInsets.only(top: 30),
-              padding: const EdgeInsets.only(top: 10),
-              child: const Text(
-                "Copyright © AA Digital Solution",
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey, fontSize: 15),
+              Align(
+                heightFactor: 0.2,
+                child: Image.asset(AssetConfig.kFoodCenter),
               ),
-            ),
-          ]),
-        ),
-        endDrawer: DrawerScreen(
-          scaffoldKey: scaffoldKey,
-        ));
+              SizedBox(height: getDeviceHeight(context) * 0.1),
+              servicesDescription(
+                  descrip:
+                      "We offer you a still life photography classification to"),
+              servicesDescription(
+                  descrip:
+                      "make appealing still life photos of food. We have a"),
+              servicesDescription(
+                  descrip:
+                      "specialization in business photography, the results of"),
+              servicesDescription(
+                  descrip: "Which are utilized in ads, magazines, bundling,"),
+              servicesDescription(descrip: "menus, or cookbooks."),
+              SizedBox(height: getDeviceHeight(context) * 0.1),
+              const Text(
+                "Our Project",
+                style: TextStyle(
+                    color: Globals.redColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                "What we've been working on",
+                style: TextStyle(
+                    color: Globals.whiteColor,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
+              ),
+              CarouselSlider(
+                carouselController: controller,
+                options: CarouselOptions(
+                  height: getDeviceHeight(context) * 0.2,
+                  viewportFraction: 0.3,
+                ),
+                items: list
+                    .map((item) => Container(
+                          margin: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(item))),
+                        ))
+                    .toList(),
+              ),
+              SizedBox(height: getDeviceHeight(context) * 0.02),
+              InkWell(
+                onTap: () {
+                  controller.nextPage();
+                },
+                child: Image.asset(AssetConfig.kSeePortfolio),
+              ),
+              Container(
+                width: getDeviceWidth(context),
+                color: Globals.blackColor,
+                margin: const EdgeInsets.only(top: 30),
+                padding: const EdgeInsets.only(top: 10),
+                child: const Text(
+                  "Copyright © AA Digital Solution",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.grey, fontSize: 15),
+                ),
+              ),
+            ]),
+          ),
+          endDrawer: DrawerScreen(
+            scaffoldKey: scaffoldKey,
+          )),
+    );
   }
 }

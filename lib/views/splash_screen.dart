@@ -3,6 +3,7 @@ import 'package:aa_digital/config/asset_config.dart';
 import 'package:aa_digital/routes/route_names.dart';
 import 'package:aa_digital/utils/globals.dart';
 import 'package:aa_digital/views/dashboard_screen.dart';
+import 'package:aa_digital/views/initial_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,24 +20,17 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const DashboardScreen())));
+            MaterialPageRoute(builder: (context) => const InitialScreen())));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Globals.blackColor,
-        bottomNavigationBar: const Padding(
-          padding: EdgeInsets.only(bottom: 10),
-          child: Text(
-            "Copyright © AA Digital Solution",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.grey, fontSize: 15),
-          ),
-        ),
+        backgroundColor: Globals.backgroundColor,
         body: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(image: AssetImage(AssetConfig.kSplashBG))),
+          decoration: const BoxDecoration(color: Globals.backgroundColor
+              // image: DecorationImage(image: AssetImage(AssetConfig.kSplashBG))
+              ),
           child: Center(child: Image.asset(AssetConfig.kLogo)),
         ));
   }

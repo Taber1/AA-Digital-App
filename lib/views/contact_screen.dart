@@ -5,13 +5,14 @@ import 'package:aa_digital/views/drawer.dart';
 import 'package:flutter/material.dart';
 
 class ContactUsScreen extends StatelessWidget {
-  const ContactUsScreen({Key? key}) : super(key: key);
+  ContactUsScreen({Key? key}) : super(key: key);
 
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: scaffoldKey,
+      resizeToAvoidBottomInset: true,
       backgroundColor: Globals.greyColorDark,
       body: SingleChildScrollView(
         child: Column(children: [
@@ -123,6 +124,7 @@ class ContactUsScreen extends StatelessWidget {
                             width: getDeviceWidth(context) * 0.27,
                             height: getDeviceHeight(context) * 0.05,
                             child: const TextField(
+                              style: TextStyle(color: Globals.whiteColor),
                               decoration: InputDecoration(
                                 filled: true,
                                 fillColor: Globals.blackColor,
@@ -229,34 +231,47 @@ class ContactUsScreen extends StatelessWidget {
 
   Widget contactCard(
       String title, String descrip, String icon, double height, double width) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-          color: Globals.blackColor,
-          border: Border.all(color: Globals.greyColorLight, width: 2)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Align(
-            alignment: Alignment.centerRight,
-            child: Image.asset(icon),
-          ),
-          Text(
-            title,
-            style: const TextStyle(
-                color: Globals.whiteColor,
-                fontSize: 18,
-                fontWeight: FontWeight.bold),
-          ),
-          Flexible(
-            child: Text(
-              descrip,
-              style: const TextStyle(
-                  color: Globals.redColor, fontWeight: FontWeight.bold),
+    Globals globals = Globals();
+    return InkWell(
+      onTap: () {
+        if (title == "Phone") {
+          globals.launchIt("Phone", descrip);
+        } else if (title == "Email address") {
+          globals.launchIt("Email address", descrip);
+        } else {
+          globals.launchIt("Address", "34.2516561,-118.5238963");
+        }
+      },
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+            color: Globals.blackColor,
+            border: Border.all(color: Globals.greyColorLight, width: 2)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: Image.asset(icon),
             ),
-          )
-        ],
+            Text(
+              title,
+              style: const TextStyle(
+                  color: Globals.whiteColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            Flexible(
+              child: Text(
+                descrip,
+                style: const TextStyle(
+                    color: Globals.redColor, fontWeight: FontWeight.bold),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
