@@ -2,8 +2,10 @@ import 'package:aa_digital/config/asset_config.dart';
 import 'package:aa_digital/routes/route_names.dart';
 import 'package:aa_digital/utils/globals.dart';
 import 'package:aa_digital/views/constants.dart';
-import 'package:aa_digital/views/drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'header.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -17,245 +19,118 @@ class DashboardScreen extends StatelessWidget {
       },
       child: Scaffold(
           key: scaffoldKey,
-          backgroundColor: Globals.blackColor,
-          body: Stack(
-            children: [
-              Container(
-                  height: getDeviceHeight(context) * 0.5,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(AssetConfig.kHomeBG),
-                          fit: BoxFit.cover))),
-              SingleChildScrollView(
-                  child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 30, horizontal: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.asset(
-                              AssetConfig.kLogo,
-                              height: getDeviceHeight(context) * 0.15,
-                              width: getDeviceWidth(context) * 0.15,
-                            ),
-                            InkWell(
-                                onTap: () {
-                                  scaffoldKey.currentState!.openEndDrawer();
-                                },
-                                child: Image.asset(AssetConfig.kMenuIcon))
-                          ],
-                        ),
-                        SizedBox(height: getDeviceHeight(context) * 0.03),
-                        Wrap(alignment: WrapAlignment.center, children: [
-                          const Text("Diseñamos, ",
-                              style: TextStyle(
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.bold,
-                                  color: Globals.whiteColor)),
-                          Container(
-                            padding: const EdgeInsets.only(
-                              bottom: 5,
-                            ),
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                              color: Globals.redColor,
-                              width: 1.0,
-                            ))),
-                            child: const Text("Creamos,",
-                                style: TextStyle(
-                                    color: Globals.redColor,
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                          const Text(" Somos ",
-                              style: TextStyle(
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.bold,
-                                  color: Globals.whiteColor)),
-                          Container(
-                            padding: const EdgeInsets.only(
-                              bottom: 5,
-                            ),
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                              color: Globals.redColor,
-                              width: 1.0,
-                            ))),
-                            child: const Text("una",
-                                style: TextStyle(
-                                    color: Globals.redColor,
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                          const Text(" Agencia ",
-                              style: TextStyle(
-                                  fontSize: 35,
-                                  fontWeight: FontWeight.bold,
-                                  color: Globals.whiteColor)),
-                          Container(
-                            padding: const EdgeInsets.only(
-                              bottom: 5,
-                            ),
-                            decoration: const BoxDecoration(
-                                border: Border(
-                                    bottom: BorderSide(
-                              color: Globals.redColor,
-                              width: 1.0,
-                            ))),
-                            child: const Text("Creadora",
-                                style: TextStyle(
-                                    color: Globals.redColor,
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.bold)),
-                          )
-                        ]),
-                        SizedBox(height: getDeviceHeight(context) * 0.03),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/it.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/es.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/mx.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/us.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/sv.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/br.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Flexible(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/ar.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                            Flexible(
-                              flex: 1,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/gr.png',
-                                    package: 'country_icons'),
-                              ),
-                            ),
-                            const Flexible(child: SizedBox())
-                          ],
-                        ),
-                        SizedBox(height: getDeviceHeight(context) * 0.04),
-                        const Text(
-                          "We Convey Your Aspirations Into Visuals",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
+          backgroundColor: Globals.backgroundColor,
+          body: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
+            child: Stack(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: getDeviceHeight(context) * 0.1),
+                    Text(
+                      "Find the solution to your business problems",
+                      style: GoogleFonts.playfairDisplay(
+                          textStyle: const TextStyle(
                               color: Globals.whiteColor,
                               fontSize: 30,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: getDeviceHeight(context) * 0.04),
+                              fontWeight: FontWeight.bold)),
+                    ),
+                    SizedBox(height: getDeviceHeight(context) * 0.05),
+                    Text(
+                      "Our Service",
+                      style: GoogleFonts.playfairDisplay(
+                          textStyle: const TextStyle(
+                              color: Globals.whiteColor,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold)),
+                    ),
+                    SizedBox(height: getDeviceHeight(context) * 0.03),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        serviceCard(
+                            context: context,
+                            image:
+                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
+                            title: "Websites and Social Media"),
+                        serviceCard(
+                            context: context,
+                            image:
+                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
+                            title: "Restaurant Menu Design"),
                       ],
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Container(
-                      padding:
-                          const EdgeInsets.only(left: 20, top: 20, bottom: 20),
-                      width: getDeviceWidth(context) * 0.8,
-                      color: Globals.redColor,
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text("Ready To Work Together?",
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    color: Globals.whiteColor)),
-                            InkWell(
-                              onTap: () {
-                                Navigator.pushReplacementNamed(
-                                    context, contactUs);
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.all(10),
-                                margin: const EdgeInsets.only(top: 10),
-                                alignment: Alignment.center,
-                                color: Globals.blackColor,
-                                width: getDeviceWidth(context) * 0.5,
-                                child: const Text(
-                                  "Contact Us / Contáctenos",
-                                  style: TextStyle(
-                                      color: Globals.whiteColor,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16),
-                                ),
-                              ),
-                            )
-                          ]),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        serviceCard(
+                            context: context,
+                            image:
+                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
+                            title: "Food Photography"),
+                        serviceCard(
+                            context: context,
+                            image:
+                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
+                            title: "Business Consultation"),
+                      ],
                     ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 10, top: 30),
-                    child: Text(
-                      "Copyright © AA Digital Solution",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.grey, fontSize: 15),
-                    ),
-                  ),
-                ],
-              )),
-            ],
-          ),
-          endDrawer: DrawerScreen(
-            scaffoldKey: scaffoldKey,
+                  ],
+                ),
+                const HeaderScreen(
+                  currentScren: "Contact us",
+                ),
+              ],
+            ),
           )),
+    );
+  }
+
+  Widget serviceCard(
+      {required BuildContext context,
+      required String image,
+      required String title}) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushReplacementNamed(context, businessConsulting);
+      },
+      child: SizedBox(
+        height: getDeviceHeight(context) * 0.28,
+        width: getDeviceWidth(context) * 0.4,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                image,
+                height: getDeviceHeight(context) * 0.15,
+                width: getDeviceWidth(context) * 0.4,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(height: getDeviceHeight(context) * 0.01),
+            Text(title,
+                style: GoogleFonts.montserrat(
+                  textStyle: const TextStyle(
+                      color: Globals.whiteColor,
+                      fontSize: 20,
+                      letterSpacing: 0.5,
+                      fontWeight: FontWeight.w300),
+                )),
+            SizedBox(height: getDeviceHeight(context) * 0.005),
+            Text("20 Results",
+                style: GoogleFonts.montserrat(
+                  textStyle: const TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16,
+                      letterSpacing: 0.5,
+                      fontWeight: FontWeight.w300),
+                ))
+          ],
+        ),
+      ),
     );
   }
 }

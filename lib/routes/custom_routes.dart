@@ -1,6 +1,6 @@
 import 'package:aa_digital/routes/route_names.dart';
 import 'package:aa_digital/views/about_screen.dart';
-import 'package:aa_digital/views/business_screen.dart';
+import 'package:aa_digital/views/business_service.dart';
 import 'package:aa_digital/views/contact_screen.dart';
 import 'package:aa_digital/views/dashboard_screen.dart';
 import 'package:aa_digital/error_screen.dart';
@@ -23,7 +23,7 @@ class CustomRoutes {
       case aboutUs:
         return MaterialPageRoute(builder: (_) => const AboutUsScreen());
       case businessConsulting:
-        return MaterialPageRoute(builder: (_) => const BusinessScreen());
+        return MaterialPageRoute(builder: (_) => const BusinessService());
       case foodPhotography:
         return MaterialPageRoute(builder: (_) => const FoodScreen());
       case webNsocail:

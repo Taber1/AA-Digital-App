@@ -20,6 +20,7 @@ class _InitialScreenState extends State<InitialScreen> {
       backgroundColor: Globals.backgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Image.asset(
@@ -28,6 +29,7 @@ class _InitialScreenState extends State<InitialScreen> {
               width: getDeviceWidth(context) * 0.4,
             ),
           ),
+          SizedBox(height: getDeviceHeight(context) * 0.04),
           Text("We Create\nThe Passion",
               textAlign: TextAlign.center,
               style: GoogleFonts.playfairDisplay(
@@ -36,6 +38,7 @@ class _InitialScreenState extends State<InitialScreen> {
                 fontWeight: FontWeight.bold,
                 color: Globals.whiteColor,
               ))),
+          SizedBox(height: getDeviceHeight(context) * 0.08),
           InkWell(
             onTap: () {
               Navigator.push(
@@ -45,11 +48,11 @@ class _InitialScreenState extends State<InitialScreen> {
             },
             child: Container(
               height: getDeviceHeight(context) * 0.06,
-              width: getDeviceWidth(context) * 0.4,
+              width: getDeviceWidth(context) * 0.6,
               padding: const EdgeInsets.all(10),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
+                  border: Border.all(color: Globals.whiteColor, width: 1.5),
                   borderRadius: BorderRadius.circular(50)),
               child: const Text("Let's Start",
                   style: TextStyle(
