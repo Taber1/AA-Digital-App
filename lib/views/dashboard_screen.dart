@@ -20,69 +20,76 @@ class DashboardScreen extends StatelessWidget {
       child: Scaffold(
           key: scaffoldKey,
           backgroundColor: Globals.backgroundColor,
-          body: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
-            child: Stack(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          body: Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                    color: Globals.backgroundColor,
+                    image: DecorationImage(
+                        image: AssetImage(AssetConfig.kBG), fit: BoxFit.fill)),
+              ),
+              SingleChildScrollView(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 70),
+                child: Stack(
                   children: [
-                    SizedBox(height: getDeviceHeight(context) * 0.1),
-                    Text(
-                      "Find the solution to your business problems",
-                      style: GoogleFonts.playfairDisplay(
-                          textStyle: const TextStyle(
-                              color: Globals.whiteColor,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                    SizedBox(height: getDeviceHeight(context) * 0.05),
-                    Text(
-                      "Our Service",
-                      style: GoogleFonts.playfairDisplay(
-                          textStyle: const TextStyle(
-                              color: Globals.whiteColor,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                    SizedBox(height: getDeviceHeight(context) * 0.03),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        serviceCard(
-                            context: context,
-                            image:
-                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
-                            title: "Websites and Social Media"),
-                        serviceCard(
-                            context: context,
-                            image:
-                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
-                            title: "Restaurant Menu Design"),
+                        SizedBox(height: getDeviceHeight(context) * 0.1),
+                        Text(
+                          "Find the solution to your business problems",
+                          style: GoogleFonts.playfairDisplay(
+                              textStyle: const TextStyle(
+                                  color: Globals.whiteColor,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        SizedBox(height: getDeviceHeight(context) * 0.05),
+                        Text(
+                          "Our Service",
+                          style: GoogleFonts.playfairDisplay(
+                              textStyle: const TextStyle(
+                                  color: Globals.whiteColor,
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        SizedBox(height: getDeviceHeight(context) * 0.03),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            serviceCard(
+                                context: context,
+                                image: AssetConfig.kWebHome,
+                                title: "Websites and Social Media"),
+                            serviceCard(
+                                context: context,
+                                image: AssetConfig.kMenuHome,
+                                title: "Restaurant Menu Design"),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            serviceCard(
+                                context: context,
+                                image: AssetConfig.kFoodHome,
+                                title: "Food Photography"),
+                            serviceCard(
+                                context: context,
+                                image: AssetConfig.kBusinessHome,
+                                title: "Business Consultation"),
+                          ],
+                        ),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        serviceCard(
-                            context: context,
-                            image:
-                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
-                            title: "Food Photography"),
-                        serviceCard(
-                            context: context,
-                            image:
-                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg",
-                            title: "Business Consultation"),
-                      ],
+                    const HeaderScreen(
+                      currentScren: "Contact us",
                     ),
                   ],
                 ),
-                const HeaderScreen(
-                  currentScren: "Contact us",
-                ),
-              ],
-            ),
+              ),
+            ],
           )),
     );
   }
@@ -93,7 +100,15 @@ class DashboardScreen extends StatelessWidget {
       required String title}) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushReplacementNamed(context, businessConsulting);
+        if (title.contains("Web")) {
+          Navigator.pushReplacementNamed(context, webNsocail);
+        } else if (title.contains("Menu")) {
+          Navigator.pushReplacementNamed(context, menuDesign);
+        } else if (title.contains("Food")) {
+          Navigator.pushReplacementNamed(context, foodPhotography);
+        } else {
+          Navigator.pushReplacementNamed(context, businessConsulting);
+        }
       },
       child: SizedBox(
         height: getDeviceHeight(context) * 0.28,
@@ -103,7 +118,7 @@ class DashboardScreen extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
+              child: Image.asset(
                 image,
                 height: getDeviceHeight(context) * 0.15,
                 width: getDeviceWidth(context) * 0.4,

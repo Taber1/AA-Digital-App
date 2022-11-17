@@ -18,9 +18,18 @@ class _HeaderScreenState extends State<HeaderScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Icon(
-          Icons.arrow_back_ios,
-          color: Globals.whiteColor,
+        Container(
+          padding: const EdgeInsets.all(5),
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Color.fromARGB(255, 125, 125, 125),
+          ),
+          alignment: Alignment.centerRight,
+          child: const Icon(
+            Icons.arrow_back_ios,
+            size: 20,
+            color: Globals.whiteColor,
+          ),
         ),
         !visibleMenu
             ? InkWell(
@@ -29,9 +38,15 @@ class _HeaderScreenState extends State<HeaderScreen> {
                     visibleMenu = true;
                   });
                 },
-                child: const Icon(
-                  Icons.menu,
-                  color: Globals.whiteColor,
+                child: Container(
+                  padding: const EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 125, 125, 125),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: const Icon(
+                    Icons.menu,
+                    color: Globals.whiteColor,
+                  ),
                 ),
               )
             : InkWell(

@@ -28,9 +28,10 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
         backgroundColor: Globals.backgroundColor,
         body: Container(
-          decoration: const BoxDecoration(color: Globals.backgroundColor
-              // image: DecorationImage(image: AssetImage(AssetConfig.kSplashBG))
-              ),
+          decoration: const BoxDecoration(
+              color: Globals.backgroundColor,
+              image: DecorationImage(
+                  image: AssetImage(AssetConfig.kBG), fit: BoxFit.fill)),
           child: Center(child: Image.asset(AssetConfig.kLogo)),
         ));
   }
