@@ -1,6 +1,9 @@
+import 'package:aa_digital/views/contact_screen.dart';
 import 'package:flutter/material.dart';
 import '../utils/globals.dart';
 import 'constants.dart';
+import 'contact_screen_new.dart';
+import 'dashboard_screen.dart';
 
 class HeaderScreen extends StatefulWidget {
   final String currentScren;
@@ -18,18 +21,11 @@ class _HeaderScreenState extends State<HeaderScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          padding: const EdgeInsets.all(5),
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Color.fromARGB(255, 125, 125, 125),
-          ),
-          alignment: Alignment.centerRight,
-          child: const Icon(
-            Icons.arrow_back_ios,
-            size: 20,
-            color: Globals.whiteColor,
-          ),
+        //Color.fromARGB(255, 125, 125, 125),
+        const Icon(
+          Icons.arrow_back_ios,
+          size: 20,
+          color: Globals.whiteColor,
         ),
         !visibleMenu
             ? InkWell(
@@ -69,8 +65,17 @@ class _HeaderScreenState extends State<HeaderScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.home,
-                              size: 20, color: Globals.whiteColor),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const DashboardScreen()));
+                            },
+                            child: const Icon(Icons.home,
+                                size: 20, color: Globals.whiteColor),
+                          ),
                           widget.currentScren == "Home"
                               ? Container(
                                   width: 20,
@@ -82,8 +87,17 @@ class _HeaderScreenState extends State<HeaderScreen> {
                                 )
                               : const SizedBox(),
                           const SizedBox(height: 10),
-                          const Icon(Icons.call,
-                              size: 20, color: Globals.whiteColor),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ContactScreenNew()));
+                            },
+                            child: const Icon(Icons.call,
+                                size: 20, color: Globals.whiteColor),
+                          ),
                           widget.currentScren == "Contact us"
                               ? Container(
                                   width: 20,
@@ -102,10 +116,19 @@ class _HeaderScreenState extends State<HeaderScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
-                            "Home",
-                            style: TextStyle(
-                                fontSize: 17, color: Globals.whiteColor),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const DashboardScreen()));
+                            },
+                            child: const Text(
+                              "Home",
+                              style: TextStyle(
+                                  fontSize: 17, color: Globals.whiteColor),
+                            ),
                           ),
                           widget.currentScren == "Home"
                               ? Container(
@@ -118,10 +141,19 @@ class _HeaderScreenState extends State<HeaderScreen> {
                                 )
                               : const SizedBox(),
                           const SizedBox(height: 10),
-                          const Text(
-                            "Contact us",
-                            style: TextStyle(
-                                fontSize: 17, color: Globals.whiteColor),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ContactScreenNew()));
+                            },
+                            child: const Text(
+                              "Contact us",
+                              style: TextStyle(
+                                  fontSize: 17, color: Globals.whiteColor),
+                            ),
                           ),
                           widget.currentScren == "Contact us"
                               ? Container(
