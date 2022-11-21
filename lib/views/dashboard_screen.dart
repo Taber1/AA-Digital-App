@@ -84,7 +84,7 @@ class DashboardScreen extends StatelessWidget {
                       ],
                     ),
                     const HeaderScreen(
-                      currentScren: "Contact us",
+                      currentScren: "Home",
                     ),
                   ],
                 ),

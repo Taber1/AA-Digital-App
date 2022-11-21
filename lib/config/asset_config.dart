@@ -5,6 +5,8 @@ class AssetConfig {
   static const String kFoodHome = "assets/images/new/food-service.png";
   static const String kMenuHome = "assets/images/new/menu-design.png";
   static const String kWebHome = "assets/images/new/web-design.png";
+  static const String kMail = "assets/images/new/mail.png";
+  static const String kPhone = "assets/images/new/phone.png";
   //! Old Assets
   static const String kMenuIcon = "assets/images/menu_design/menu_bar.png";
   static const String kFlag1 = "assets/images/home_page/flag_1.png";

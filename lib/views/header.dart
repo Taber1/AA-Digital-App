@@ -22,10 +22,15 @@ class _HeaderScreenState extends State<HeaderScreen> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         //Color.fromARGB(255, 125, 125, 125),
-        const Icon(
-          Icons.arrow_back_ios,
-          size: 20,
-          color: Globals.whiteColor,
+        InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios,
+            size: 20,
+            color: Globals.whiteColor,
+          ),
         ),
         !visibleMenu
             ? InkWell(
