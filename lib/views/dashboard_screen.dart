@@ -101,13 +101,13 @@ class DashboardScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         if (title.contains("Web")) {
-          Navigator.pushReplacementNamed(context, webNsocail);
+          Navigator.pushNamed(context, webNsocail);
         } else if (title.contains("Menu")) {
-          Navigator.pushReplacementNamed(context, menuDesign);
+          Navigator.pushNamed(context, menuDesign);
         } else if (title.contains("Food")) {
-          Navigator.pushReplacementNamed(context, foodPhotography);
+          Navigator.pushNamed(context, foodPhotography);
         } else {
-          Navigator.pushReplacementNamed(context, businessConsulting);
+          Navigator.pushNamed(context, businessConsulting);
         }
       },
       child: SizedBox(

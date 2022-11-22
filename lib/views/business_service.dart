@@ -14,6 +14,13 @@ class BusinessService extends StatefulWidget {
 }
 
 class _BusinessServiceState extends State<BusinessService> {
+  List<Map> recent = [
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kBusinessMenu2},
+  ];
+  List<Map> popular = [
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kBusinessMenu3},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kBusinessMenu4},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +92,7 @@ class _BusinessServiceState extends State<BusinessService> {
                     SizedBox(
                       height: getDeviceHeight(context) * 0.25,
                       child: ListView.builder(
-                          itemCount: 10,
+                          itemCount: recent.length,
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
@@ -99,21 +106,22 @@ class _BusinessServiceState extends State<BusinessService> {
                                     width: getDeviceWidth(context) * 0.4,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        image: const DecorationImage(
-                                            image: NetworkImage(
-                                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg"),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                recent[index]['image']),
                                             fit: BoxFit.cover)),
                                   ),
+                                  const SizedBox(height: 10),
                                   Text(
-                                    "Tacos Valley Truck",
+                                    recent[index]['name'],
                                     maxLines: 2,
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.montserrat(
                                       textStyle: const TextStyle(
                                           color: Colors.grey,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w300),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                 ],
@@ -134,7 +142,7 @@ class _BusinessServiceState extends State<BusinessService> {
                     SizedBox(
                       height: getDeviceHeight(context) * 0.25,
                       child: ListView.builder(
-                          itemCount: 10,
+                          itemCount: popular.length,
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
@@ -148,21 +156,22 @@ class _BusinessServiceState extends State<BusinessService> {
                                     width: getDeviceWidth(context) * 0.4,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        image: const DecorationImage(
-                                            image: NetworkImage(
-                                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg"),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                popular[index]['image']),
                                             fit: BoxFit.cover)),
                                   ),
+                                  const SizedBox(height: 10),
                                   Text(
-                                    "Tacos Valley Truck",
+                                    popular[index]['name'],
                                     maxLines: 2,
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.montserrat(
                                       textStyle: const TextStyle(
                                           color: Colors.grey,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w300),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                 ],

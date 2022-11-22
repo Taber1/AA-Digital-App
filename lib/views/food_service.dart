@@ -14,6 +14,36 @@ class FoodService extends StatefulWidget {
 }
 
 class _FoodServiceState extends State<FoodService> {
+  List<Map> recent = [
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto14},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto15},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto16},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto17},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto18},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto19},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto20},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto21},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto22},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto23},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto24},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto25},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto26},
+  ];
+  List<Map> popular = [
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto1},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto2},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto3},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto4},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto5},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto6},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto7},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto8},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto9},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto10},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto11},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto12},
+    {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto13},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,7 +115,7 @@ class _FoodServiceState extends State<FoodService> {
                     SizedBox(
                       height: getDeviceHeight(context) * 0.25,
                       child: ListView.builder(
-                          itemCount: 10,
+                          itemCount: recent.length,
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
@@ -99,21 +129,22 @@ class _FoodServiceState extends State<FoodService> {
                                     width: getDeviceWidth(context) * 0.4,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        image: const DecorationImage(
-                                            image: NetworkImage(
-                                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg"),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                recent[index]['image']),
                                             fit: BoxFit.cover)),
                                   ),
+                                  const SizedBox(height: 10),
                                   Text(
-                                    "Tacos Valley Truck",
+                                    recent[index]['name'],
                                     maxLines: 2,
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.montserrat(
                                       textStyle: const TextStyle(
                                           color: Colors.grey,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w300),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                 ],
@@ -134,7 +165,7 @@ class _FoodServiceState extends State<FoodService> {
                     SizedBox(
                       height: getDeviceHeight(context) * 0.25,
                       child: ListView.builder(
-                          itemCount: 10,
+                          itemCount: popular.length,
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
@@ -148,21 +179,22 @@ class _FoodServiceState extends State<FoodService> {
                                     width: getDeviceWidth(context) * 0.4,
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
-                                        image: const DecorationImage(
-                                            image: NetworkImage(
-                                                "https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg"),
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                popular[index]['image']),
                                             fit: BoxFit.cover)),
                                   ),
+                                  const SizedBox(height: 10),
                                   Text(
-                                    "Tacos Valley Truck",
+                                    popular[index]['name'],
                                     maxLines: 2,
                                     textAlign: TextAlign.start,
                                     style: GoogleFonts.montserrat(
                                       textStyle: const TextStyle(
                                           color: Colors.grey,
-                                          fontSize: 20,
+                                          fontSize: 18,
                                           letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w300),
+                                          fontWeight: FontWeight.w500),
                                     ),
                                   ),
                                 ],
