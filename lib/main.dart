@@ -2,8 +2,14 @@ import 'package:aa_digital/routes/custom_routes.dart';
 import 'package:aa_digital/routes/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:flutter/services.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
   runApp(
     Phoenix(
       child: const MyApp(),
