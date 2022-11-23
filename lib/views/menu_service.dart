@@ -1,3 +1,4 @@
+import 'package:open_filex/open_filex.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../config/asset_config.dart';
@@ -69,7 +70,7 @@ class _MenuServiceState extends State<MenuService> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      "20 Results",
+                      "4 Results",
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                             color: Colors.grey,
@@ -90,7 +91,7 @@ class _MenuServiceState extends State<MenuService> {
                     ),
                     SizedBox(height: getDeviceHeight(context) * 0.01),
                     SizedBox(
-                      height: getDeviceHeight(context) * 0.25,
+                      height: getDeviceHeight(context) * 0.2,
                       child: ListView.builder(
                           itemCount: recent.length,
                           shrinkWrap: true,
@@ -101,27 +102,21 @@ class _MenuServiceState extends State<MenuService> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    height: getDeviceHeight(context) * 0.15,
-                                    width: getDeviceWidth(context) * 0.4,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                recent[index]['image']),
-                                            fit: BoxFit.cover)),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Text(
-                                    recent[index]['name'],
-                                    maxLines: 2,
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: const TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 18,
-                                          letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w500),
+                                  InkWell(
+                                    onTap: () {
+                                      OpenFilex.open("assets/a.pdf");
+                                      print('sd');
+                                    },
+                                    child: Container(
+                                      height: getDeviceHeight(context) * 0.15,
+                                      width: getDeviceWidth(context) * 0.4,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  recent[index]['image']),
+                                              fit: BoxFit.fill)),
                                     ),
                                   ),
                                 ],
@@ -140,7 +135,7 @@ class _MenuServiceState extends State<MenuService> {
                     ),
                     SizedBox(height: getDeviceHeight(context) * 0.01),
                     SizedBox(
-                      height: getDeviceHeight(context) * 0.25,
+                      height: getDeviceHeight(context) * 0.2,
                       child: ListView.builder(
                           itemCount: popular.length,
                           shrinkWrap: true,
@@ -160,20 +155,7 @@ class _MenuServiceState extends State<MenuService> {
                                         image: DecorationImage(
                                             image: AssetImage(
                                                 popular[index]['image']),
-                                            fit: BoxFit.cover)),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Text(
-                                    popular[index]['name'],
-                                    maxLines: 2,
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: const TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 18,
-                                          letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w500),
-                                    ),
+                                            fit: BoxFit.fill)),
                                   ),
                                 ],
                               ),

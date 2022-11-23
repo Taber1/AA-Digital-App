@@ -1,3 +1,4 @@
+import 'package:aa_digital/views/image_preview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -82,7 +83,7 @@ class _FoodServiceState extends State<FoodService> {
                   children: [
                     SizedBox(height: getDeviceHeight(context) * 0.4),
                     Text(
-                      "Food Photography",
+                      "Photography",
                       style: GoogleFonts.playfairDisplay(
                           textStyle: const TextStyle(
                               fontSize: 30,
@@ -92,7 +93,7 @@ class _FoodServiceState extends State<FoodService> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      "20 Results",
+                      "26 Results",
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                             color: Colors.grey,
@@ -113,7 +114,7 @@ class _FoodServiceState extends State<FoodService> {
                     ),
                     SizedBox(height: getDeviceHeight(context) * 0.01),
                     SizedBox(
-                      height: getDeviceHeight(context) * 0.25,
+                      height: getDeviceHeight(context) * 0.2,
                       child: ListView.builder(
                           itemCount: recent.length,
                           shrinkWrap: true,
@@ -121,33 +122,32 @@ class _FoodServiceState extends State<FoodService> {
                           itemBuilder: (context, index) {
                             return SizedBox(
                               width: getDeviceWidth(context) * 0.45,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: getDeviceHeight(context) * 0.15,
-                                    width: getDeviceWidth(context) * 0.4,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                recent[index]['image']),
-                                            fit: BoxFit.cover)),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Text(
-                                    recent[index]['name'],
-                                    maxLines: 2,
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: const TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 18,
-                                          letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w500),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ImagePreviewScreen(
+                                                  imageName: recent[index]
+                                                      ['image'])));
+                                },
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: getDeviceHeight(context) * 0.15,
+                                      width: getDeviceWidth(context) * 0.4,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  recent[index]['image']),
+                                              fit: BoxFit.fill)),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             );
                           }),
@@ -163,7 +163,7 @@ class _FoodServiceState extends State<FoodService> {
                     ),
                     SizedBox(height: getDeviceHeight(context) * 0.01),
                     SizedBox(
-                      height: getDeviceHeight(context) * 0.25,
+                      height: getDeviceHeight(context) * 0.2,
                       child: ListView.builder(
                           itemCount: popular.length,
                           shrinkWrap: true,
@@ -171,37 +171,88 @@ class _FoodServiceState extends State<FoodService> {
                           itemBuilder: (context, index) {
                             return SizedBox(
                               width: getDeviceWidth(context) * 0.45,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: getDeviceHeight(context) * 0.15,
-                                    width: getDeviceWidth(context) * 0.4,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                popular[index]['image']),
-                                            fit: BoxFit.cover)),
-                                  ),
-                                  const SizedBox(height: 10),
-                                  Text(
-                                    popular[index]['name'],
-                                    maxLines: 2,
-                                    textAlign: TextAlign.start,
-                                    style: GoogleFonts.montserrat(
-                                      textStyle: const TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 18,
-                                          letterSpacing: 0.5,
-                                          fontWeight: FontWeight.w500),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ImagePreviewScreen(
+                                                  imageName: popular[index]
+                                                      ['image'])));
+                                },
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: getDeviceHeight(context) * 0.15,
+                                      width: getDeviceWidth(context) * 0.4,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  popular[index]['image']),
+                                              fit: BoxFit.fill)),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             );
                           }),
-                    )
+                    ),
+                    Text(
+                      "Showing the world, A new way",
+                      style: GoogleFonts.playfairDisplay(
+                          textStyle: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1,
+                              color: Globals.whiteColor)),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Unless you’re a graphic designer, your company likely sells products online primarily through images. But what if the pictures aren’t good enough? Bad photos can lose clients daily! Product photography has a huge impact on sales and customer behaviour. No matter the size or scope of your business, targeted photo campaigns make a more established impression when you’re selling something with a strong visual message. Now you don’t need to worry as AA Digital Solution provides you with the best angles that help you with the finest picture qualities that are engaging and fascinating.",
+                      textAlign: TextAlign.justify,
+                      style: GoogleFonts.montserrat(
+                          textStyle:
+                              const TextStyle(color: Globals.whiteColor)),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "A visual representation always appeals to the eye. But an accurate visual representation serves the best. We do the best photography of your food and restaurant, all your services, events and much more through our photography. Our photography services are designed in a manner to give you an original and attractive look. We give you the finest food photography that will appeal to customers and trigger them to order your food. Food photography basically sounds like photos taken but capturing images in the best lighting and use it accurately to promote your restaurant services on social media and websites. We guarantee that our photography especially our restaurant photography will always be up to the mark and will help you attain more customers digitally. Our services are designed to maximize the reach of your business, therefore we put in all our dedication and soul to bring out the best pictures that perfectly fit your business nature and its requirements.",
+                      textAlign: TextAlign.justify,
+                      style: GoogleFonts.montserrat(
+                          textStyle:
+                              const TextStyle(color: Globals.whiteColor)),
+                    ),
+                    const SizedBox(height: 30),
+                    Text(
+                      "Showing the world, A new way",
+                      style: GoogleFonts.playfairDisplay(
+                          textStyle: const TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1,
+                              color: Globals.whiteColor)),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Our photography services are not just limited to product photography, we also offer our services to make your events memorable be it any event photography or corporate team photography. We put in all our zeal and zest to capture the moment in a way that leaves an everlasting impression in your mind. We cover all types of events and ensure to work according to the nature of the event we cover. Our focus is to give our best in everything we do to keep our clients satisfied. If you are looking for someone to trust with your events AA digitals is the perfect choice for your business.",
+                      textAlign: TextAlign.justify,
+                      style: GoogleFonts.montserrat(
+                          textStyle:
+                              const TextStyle(color: Globals.whiteColor)),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Let us take the charge while you sit back and relax. We will surely give you outcomes that are worth trusting. AA Digital Solutions is a team of experts who are just not skilled in their field but are also experienced and know how to bring out paramount results. Trust us and we will never let you down.",
+                      textAlign: TextAlign.justify,
+                      style: GoogleFonts.montserrat(
+                          textStyle:
+                              const TextStyle(color: Globals.whiteColor)),
+                    ),
+                    const SizedBox(height: 50),
                   ],
                 ),
               ),
