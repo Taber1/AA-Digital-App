@@ -75,7 +75,6 @@ flutter:
     - assets/images/menu-new/
     - assets/images/web-new/
     - assets/images/photography-new/
-    - assets/a.pdf
     # Old
     - assets/images/business_consulting/
     - assets/images/contact_us/
