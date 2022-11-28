@@ -60,7 +60,7 @@ class DashboardScreen extends StatelessWidget {
                           children: [
                             serviceCard(
                                 context: context,
-                                image: AssetConfig.kWebHome,
+                                image: AssetConfig.kFoodHome,
                                 title: "Photography"),
                             serviceCard(
                                 context: context,
@@ -73,11 +73,11 @@ class DashboardScreen extends StatelessWidget {
                           children: [
                             serviceCard(
                                 context: context,
-                                image: AssetConfig.kFoodHome,
+                                image: AssetConfig.kWebHome,
                                 title: "Web Design"),
                             serviceCard(
                                 context: context,
-                                image: AssetConfig.kBusinessHome,
+                                image: AssetConfig.kDigiPresenceHome,
                                 title: "Digital Presence"),
                           ],
                         ),
@@ -86,23 +86,26 @@ class DashboardScreen extends StatelessWidget {
                           children: [
                             serviceCard(
                                 context: context,
-                                image: AssetConfig.kFoodHome,
+                                image: AssetConfig.kMediaMarketingHome,
                                 title: "Media Marketing"),
                             serviceCard(
                                 context: context,
-                                image: AssetConfig.kBusinessHome,
+                                image: AssetConfig.kDigiStrategyHome,
                                 title: "Digital Strategy"),
                           ],
                         ),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             serviceCard(
                                 context: context,
-                                image: AssetConfig.kBusinessHome,
+                                image: AssetConfig.kRisingCostHome,
                                 title: "Rising Cost"),
                             GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(context, onlinePayment);
+                              },
                               child: SizedBox(
                                 height: getDeviceHeight(context) * 0.35,
                                 width: getDeviceWidth(context) * 0.4,
@@ -112,7 +115,7 @@ class DashboardScreen extends StatelessWidget {
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(10),
                                       child: Image.asset(
-                                        AssetConfig.kBusinessHome,
+                                        AssetConfig.kOnlinePaymentHome,
                                         height: getDeviceHeight(context) * 0.15,
                                         width: getDeviceWidth(context) * 0.4,
                                         fit: BoxFit.cover,
@@ -172,6 +175,14 @@ class DashboardScreen extends StatelessWidget {
           Navigator.pushNamed(context, menuDesign);
         } else if (title.contains("Photography")) {
           Navigator.pushNamed(context, foodPhotography);
+        } else if (title.contains("Presence")) {
+          Navigator.pushNamed(context, digiPresence);
+        } else if (title.contains("Strategy")) {
+          Navigator.pushNamed(context, digiStrategy);
+        } else if (title.contains("Marketing")) {
+          Navigator.pushNamed(context, mediaMarketing);
+        } else if (title.contains("Rising")) {
+          Navigator.pushNamed(context, risingCost);
         } else {
           Navigator.pushNamed(context, businessConsulting);
         }
@@ -200,15 +211,15 @@ class DashboardScreen extends StatelessWidget {
                       letterSpacing: 0.5,
                       fontWeight: FontWeight.w300),
                 )),
-            SizedBox(height: getDeviceHeight(context) * 0.005),
-            Text("20 Results",
-                style: GoogleFonts.montserrat(
-                  textStyle: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      letterSpacing: 0.5,
-                      fontWeight: FontWeight.w300),
-                ))
+            // SizedBox(height: getDeviceHeight(context) * 0.005),
+            // Text("20 Results",
+            //     style: GoogleFonts.montserrat(
+            //       textStyle: const TextStyle(
+            //           color: Colors.grey,
+            //           fontSize: 16,
+            //           letterSpacing: 0.5,
+            //           fontWeight: FontWeight.w300),
+            //     ))
           ],
         ),
       ),

@@ -29,6 +29,8 @@ class Globals {
       uri = Uri(scheme: "tel", path: info);
     } else if (type == "Email address") {
       uri = Uri(scheme: 'mailto', path: info);
+    } else if (type == "website") {
+      uri = Uri.parse(info);
     } else {
       uri = Uri.https('www.google.com',
           '/maps/search/?api=1&query=${double.parse(info.split(',')[0])},${double.parse(info.split(',')[1])}');

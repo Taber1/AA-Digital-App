@@ -5,6 +5,15 @@ class AssetConfig {
   static const String kFoodHome = "assets/images/new/food-service.png";
   static const String kMenuHome = "assets/images/new/menu-design.png";
   static const String kWebHome = "assets/images/new/web-design.png";
+  static const String kDigiPresenceHome =
+      "assets/images/new/digital-presence.png";
+  static const String kDigiStrategyHome =
+      "assets/images/new/digital-strategy.png";
+  static const String kMediaMarketingHome =
+      "assets/images/new/media-marketing.png";
+  static const String kOnlinePaymentHome =
+      "assets/images/new/online-payment.png";
+  static const String kRisingCostHome = "assets/images/new/rising-cost.png";
   static const String kMail = "assets/images/new/mail.png";
   static const String kPhone = "assets/images/new/phone.png";
   //Menu New Images
@@ -12,6 +21,10 @@ class AssetConfig {
   static const String kMenu2 = "assets/images/menu-new/menu2-min.jpg";
   static const String kMenu3 = "assets/images/menu-new/menu3-min.jpg";
   static const String kMenu4 = "assets/images/menu-new/menu4-min.jpg";
+  static const String kMenu1Full = "assets/images/menu-new/menu1-max.jpg";
+  static const String kMenu2Full = "assets/images/menu-new/menu2-max.jpg";
+  static const String kMenu3Full = "assets/images/menu-new/menu3-max.jpg";
+  static const String kMenu4Full = "assets/images/menu-new/menu4-max.jpg";
   //Menu New Images
   static const String kPhoto1 =
       "assets/images/photography-new/photography1-min.jpg";

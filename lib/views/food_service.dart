@@ -202,7 +202,7 @@ class _FoodServiceState extends State<FoodService> {
                           }),
                     ),
                     Text(
-                      "Showing the world, A new way",
+                      "SHOWING THE WORLD, A NEW YOU:",
                       style: GoogleFonts.playfairDisplay(
                           textStyle: const TextStyle(
                               fontSize: 22,
@@ -228,7 +228,7 @@ class _FoodServiceState extends State<FoodService> {
                     ),
                     const SizedBox(height: 30),
                     Text(
-                      "Showing the world, A new way",
+                      "COVERING EVENTS:",
                       style: GoogleFonts.playfairDisplay(
                           textStyle: const TextStyle(
                               fontSize: 22,
