@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:aa_digital/config/asset_config.dart';
-import 'package:aa_digital/routes/route_names.dart';
 import 'package:aa_digital/utils/globals.dart';
-import 'package:aa_digital/views/dashboard_screen.dart';
 import 'package:aa_digital/views/initial_screen.dart';
 import 'package:flutter/material.dart';
 

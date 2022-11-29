@@ -1,11 +1,10 @@
 import 'package:aa_digital/views/image_preview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../config/asset_config.dart';
 import '../utils/globals.dart';
 import 'constants.dart';
-import 'header.dart';
+import 'drawer.dart';
 
 class FoodService extends StatefulWidget {
   const FoodService({super.key});
@@ -15,6 +14,7 @@ class FoodService extends StatefulWidget {
 }
 
 class _FoodServiceState extends State<FoodService> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   List<Map> recent = [
     {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto14},
     {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto15},
@@ -49,6 +49,7 @@ class _FoodServiceState extends State<FoodService> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Globals.backgroundColor,
+      key: scaffoldKey,
       body: Stack(
         children: [
           Container(
@@ -258,16 +259,44 @@ class _FoodServiceState extends State<FoodService> {
               ),
             ],
           )),
-          const Positioned(
-            top: 50,
-            left: 20,
-            right: 20,
-            child: HeaderScreen(
-              currentScren: "Contact us",
-            ),
-          ),
+          Positioned(
+              top: 50,
+              left: 20,
+              right: 20,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 20,
+                      color: Globals.whiteColor,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      scaffoldKey.currentState!.openEndDrawer();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 125, 125, 125),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Icon(
+                        Icons.menu,
+                        color: Globals.whiteColor,
+                      ),
+                    ),
+                  )
+                ],
+              )),
         ],
       ),
+      endDrawer: const DrawerScreen(),
     );
   }
 }

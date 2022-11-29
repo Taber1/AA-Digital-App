@@ -1,17 +1,18 @@
+import 'package:aa_digital/views/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../config/asset_config.dart';
 import '../utils/globals.dart';
 import 'constants.dart';
-import 'header.dart';
 
 class DigiPresenceService extends StatelessWidget {
   const DigiPresenceService({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: Globals.backgroundColor,
       body: Stack(
         children: [
@@ -134,16 +135,44 @@ class DigiPresenceService extends StatelessWidget {
               ),
             ],
           )),
-          const Positioned(
-            top: 50,
-            left: 20,
-            right: 20,
-            child: HeaderScreen(
-              currentScren: "Contact us",
-            ),
-          ),
+          Positioned(
+              top: 50,
+              left: 20,
+              right: 20,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 20,
+                      color: Globals.whiteColor,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      scaffoldKey.currentState!.openEndDrawer();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 125, 125, 125),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Icon(
+                        Icons.menu,
+                        color: Globals.whiteColor,
+                      ),
+                    ),
+                  )
+                ],
+              )),
         ],
       ),
+      endDrawer: const DrawerScreen(),
     );
   }
 }

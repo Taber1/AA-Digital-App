@@ -46,12 +46,11 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
-  country_icons: ^2.0.2
   flutter_phoenix: "^1.0.0"
-  carousel_slider: ^4.1.1
   url_launcher: ^6.1.5
-  photo_view: ^0.14.0
+  dropdown_textfield: ^1.0.7
+  http: ^0.13.5
+  font_awesome_flutter: ^10.2.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -76,16 +75,6 @@ flutter:
     - assets/images/menu-new/
     - assets/images/web-new/
     - assets/images/photography-new/
-    # Old
-    - assets/images/business_consulting/
-    - assets/images/contact_us/
-    - assets/images/food_photography/
-    - assets/images/gallery/
-    - assets/images/home_page/
-    - assets/images/menu_design/
-    - assets/images/services/
-    - assets/images/startup_logo/
-    - assets/images/web_n_social_media_design/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

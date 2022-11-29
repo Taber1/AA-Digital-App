@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../config/asset_config.dart';
 import 'constants.dart';
-import 'header.dart';
+import 'drawer.dart';
 import '../utils/globals.dart';
 
 class WebsiteService extends StatefulWidget {
@@ -14,6 +13,7 @@ class WebsiteService extends StatefulWidget {
 }
 
 class _WebsiteServiceState extends State<WebsiteService> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   List<Map> recent = [
     {
       "name": "Don Chato",
@@ -47,6 +47,7 @@ class _WebsiteServiceState extends State<WebsiteService> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Globals.backgroundColor,
+      key: scaffoldKey,
       body: Stack(
         children: [
           Container(
@@ -91,7 +92,7 @@ class _WebsiteServiceState extends State<WebsiteService> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      "20 Results",
+                      "5 Results",
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
                             color: Colors.grey,
@@ -272,16 +273,44 @@ class _WebsiteServiceState extends State<WebsiteService> {
               ),
             ],
           )),
-          const Positioned(
-            top: 50,
-            left: 20,
-            right: 20,
-            child: HeaderScreen(
-              currentScren: "Contact us",
-            ),
-          ),
+          Positioned(
+              top: 50,
+              left: 20,
+              right: 20,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      size: 20,
+                      color: Globals.whiteColor,
+                    ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      scaffoldKey.currentState!.openEndDrawer();
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 125, 125, 125),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Icon(
+                        Icons.menu,
+                        color: Globals.whiteColor,
+                      ),
+                    ),
+                  )
+                ],
+              )),
         ],
       ),
+      endDrawer: const DrawerScreen(),
     );
   }
 }
