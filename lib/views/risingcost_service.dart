@@ -30,7 +30,11 @@ class RisingCostService extends StatelessWidget {
                   return const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Colors.black, Colors.black, Colors.transparent],
+                    colors: [
+                      Globals.blackColor,
+                      Globals.blackColor,
+                      Globals.transparentColor
+                    ],
                   ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
                 },
                 blendMode: BlendMode.dstIn,
@@ -95,7 +99,8 @@ class RisingCostService extends StatelessWidget {
                         "https://www.dir.ca.gov/dlse/",
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.montserrat(
-                            textStyle: const TextStyle(color: Colors.yellow)),
+                            textStyle:
+                                const TextStyle(color: Globals.yellowColor)),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -116,7 +121,8 @@ class RisingCostService extends StatelessWidget {
                         "https://www.dol.gov/agencies/whd/minimum-wage/state#ca",
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.montserrat(
-                            textStyle: const TextStyle(color: Colors.yellow)),
+                            textStyle:
+                                const TextStyle(color: Globals.yellowColor)),
                       ),
                     ),
                     const SizedBox(height: 30),
@@ -184,7 +190,8 @@ class RisingCostService extends StatelessWidget {
                         "https://www.ams.usda.gov/mnreports/ams_2452.pdf",
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.montserrat(
-                            textStyle: const TextStyle(color: Colors.yellow)),
+                            textStyle:
+                                const TextStyle(color: Globals.yellowColor)),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -205,7 +212,8 @@ class RisingCostService extends StatelessWidget {
                         "https://www.ams.usda.gov/mnreports/dywdairyproductssales.pdf",
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.montserrat(
-                            textStyle: const TextStyle(color: Colors.yellow)),
+                            textStyle:
+                                const TextStyle(color: Globals.yellowColor)),
                       ),
                     ),
                     const SizedBox(height: 10),

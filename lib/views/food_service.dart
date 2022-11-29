@@ -66,7 +66,10 @@ class _FoodServiceState extends State<FoodService> {
                   return const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Colors.black, Colors.black, Colors.transparent],
+                    colors: [
+                      Globals.blackColor,
+                      Globals.blackColor,
+                    ],
                   ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
                 },
                 blendMode: BlendMode.dstIn,
@@ -97,7 +100,7 @@ class _FoodServiceState extends State<FoodService> {
                       "26 Results",
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
-                            color: Colors.grey,
+                            color: Globals.greyColor,
                             fontSize: 18,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w300),

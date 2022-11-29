@@ -88,10 +88,10 @@ class DrawerScreen extends StatelessWidget {
                                   "https://www.facebook.com/profile.php?id=100081826726161&ref=pages_you_manage");
                             },
                             child: const CircleAvatar(
-                              backgroundColor: Colors.blue,
+                              backgroundColor: Globals.blueColor,
                               child: Icon(
                                 FontAwesomeIcons.facebook,
-                                color: Colors.white,
+                                color: Globals.whiteColor,
                               ),
                             ),
                           ),
@@ -101,10 +101,10 @@ class DrawerScreen extends StatelessWidget {
                                   "https://www.instagram.com/aa.digital_solutions/");
                             },
                             child: const CircleAvatar(
-                              backgroundColor: Colors.orange,
+                              backgroundColor: Globals.orangeColor,
                               child: Icon(
                                 FontAwesomeIcons.instagram,
-                                color: Colors.white,
+                                color: Globals.whiteColor,
                               ),
                             ),
                           ),
@@ -114,10 +114,10 @@ class DrawerScreen extends StatelessWidget {
                                   "https://www.linkedin.com/company/aa-digital-solutions/");
                             },
                             child: const CircleAvatar(
-                              backgroundColor: Colors.lightBlue,
+                              backgroundColor: Globals.lightBlue,
                               child: Icon(
                                 FontAwesomeIcons.linkedinIn,
-                                color: Colors.white,
+                                color: Globals.whiteColor,
                               ),
                             ),
                           ),
@@ -127,11 +127,11 @@ class DrawerScreen extends StatelessWidget {
                                   "https://www.youtube.com/channel/UCpOtPH8pAlG2g8IJeas3XPA");
                             },
                             child: const CircleAvatar(
-                              backgroundColor: Colors.red,
+                              backgroundColor: Globals.redColorPrimary,
                               child: Icon(
                                 FontAwesomeIcons.youtube,
                                 size: 20,
-                                color: Colors.white,
+                                color: Globals.whiteColor,
                               ),
                             ),
                           ),

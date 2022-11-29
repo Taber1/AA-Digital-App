@@ -5,9 +5,17 @@ class Globals {
   static const blackColor = Colors.black;
   static const backgroundColor = Color(0xff343333);
   static const redColor = Color(0xffde0d08);
+  static const redColorPrimary = Colors.red;
   static const whiteColor = Colors.white;
   static const greyColorDark = Color(0xff111111);
   static const greyColorLight = Color(0xff171717);
+  static const transparentColor = Colors.transparent;
+  static const greyColor = Colors.grey;
+  static const lightBlue = Colors.lightBlue;
+  static const blueColor = Colors.blue;
+  static const orangeColor = Colors.orange;
+  static const orangeColorButton = Color(0xffF16022);
+  static const yellowColor = Colors.yellow;
   static Map<int, Color> color = {
     50: const Color.fromRGBO(34, 100, 45, .1),
     100: const Color.fromRGBO(34, 100, 45, .2),

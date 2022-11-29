@@ -231,7 +231,7 @@ class DashboardScreen extends StatelessWidget {
             // Text("20 Results",
             //     style: GoogleFonts.montserrat(
             //       textStyle: const TextStyle(
-            //           color: Colors.grey,
+            //           color: Globals.greyColor,
             //           fontSize: 16,
             //           letterSpacing: 0.5,
             //           fontWeight: FontWeight.w300),

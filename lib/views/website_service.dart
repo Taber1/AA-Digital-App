@@ -64,7 +64,11 @@ class _WebsiteServiceState extends State<WebsiteService> {
                   return const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Colors.black, Colors.black, Colors.transparent],
+                    colors: [
+                      Globals.blackColor,
+                      Globals.blackColor,
+                      Globals.transparentColor
+                    ],
                   ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
                 },
                 blendMode: BlendMode.dstIn,
@@ -95,7 +99,7 @@ class _WebsiteServiceState extends State<WebsiteService> {
                       "5 Results",
                       style: GoogleFonts.montserrat(
                         textStyle: const TextStyle(
-                            color: Colors.grey,
+                            color: Globals.greyColor,
                             fontSize: 18,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w300),
@@ -147,7 +151,7 @@ class _WebsiteServiceState extends State<WebsiteService> {
                                       textAlign: TextAlign.start,
                                       style: GoogleFonts.montserrat(
                                         textStyle: const TextStyle(
-                                            color: Colors.grey,
+                                            color: Globals.greyColor,
                                             fontSize: 18,
                                             letterSpacing: 0.5,
                                             fontWeight: FontWeight.w500),
@@ -204,7 +208,7 @@ class _WebsiteServiceState extends State<WebsiteService> {
                                       textAlign: TextAlign.start,
                                       style: GoogleFonts.montserrat(
                                         textStyle: const TextStyle(
-                                            color: Colors.grey,
+                                            color: Globals.greyColor,
                                             fontSize: 18,
                                             letterSpacing: 0.5,
                                             fontWeight: FontWeight.w500),

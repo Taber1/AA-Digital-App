@@ -30,7 +30,11 @@ class OnlinePaymentService extends StatelessWidget {
                   return const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Colors.black, Colors.black, Colors.transparent],
+                    colors: [
+                      Globals.blackColor,
+                      Globals.blackColor,
+                      Globals.transparentColor
+                    ],
                   ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
                 },
                 blendMode: BlendMode.dstIn,

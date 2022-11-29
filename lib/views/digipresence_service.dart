@@ -30,7 +30,11 @@ class DigiPresenceService extends StatelessWidget {
                   return const LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [Colors.black, Colors.black, Colors.transparent],
+                    colors: [
+                      Globals.blackColor,
+                      Globals.blackColor,
+                      Globals.transparentColor
+                    ],
                   ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
                 },
                 blendMode: BlendMode.dstIn,
@@ -61,7 +65,7 @@ class DigiPresenceService extends StatelessWidget {
                     //   "20 Results",
                     //   style: GoogleFonts.montserrat(
                     //     textStyle: const TextStyle(
-                    //         color: Colors.grey,
+                    //         color: Globals.greyColor,
                     //         fontSize: 18,
                     //         letterSpacing: 0.5,
                     //         fontWeight: FontWeight.w300),
