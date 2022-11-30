@@ -5,6 +5,7 @@ import '../config/asset_config.dart';
 import '../utils/globals.dart';
 import 'constants.dart';
 import 'drawer.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class FoodService extends StatefulWidget {
   const FoodService({super.key});
@@ -45,6 +46,7 @@ class _FoodServiceState extends State<FoodService> {
     {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto12},
     {"name": "Tacos Valley Truck", "image": AssetConfig.kPhoto13},
   ];
+  bool readMore = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,6 +71,7 @@ class _FoodServiceState extends State<FoodService> {
                     colors: [
                       Globals.blackColor,
                       Globals.blackColor,
+                      Globals.transparentColor
                     ],
                   ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
                 },
@@ -117,13 +120,15 @@ class _FoodServiceState extends State<FoodService> {
                               color: Globals.whiteColor)),
                     ),
                     SizedBox(height: getDeviceHeight(context) * 0.01),
-                    SizedBox(
-                      height: getDeviceHeight(context) * 0.2,
-                      child: ListView.builder(
-                          itemCount: recent.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        height: getDeviceHeight(context) * 0.2,
+                        autoPlay: true,
+                        viewportFraction: 0.5,
+                      ),
+                      items: recent.map((index) {
+                        return Builder(
+                          builder: (BuildContext context) {
                             return SizedBox(
                               width: getDeviceWidth(context) * 0.45,
                               child: InkWell(
@@ -133,8 +138,7 @@ class _FoodServiceState extends State<FoodService> {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               ImagePreviewScreen(
-                                                  imageName: recent[index]
-                                                      ['image'])));
+                                                  imageName: index['image'])));
                                 },
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,15 +150,16 @@ class _FoodServiceState extends State<FoodService> {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           image: DecorationImage(
-                                              image: AssetImage(
-                                                  recent[index]['image']),
+                                              image: AssetImage(index['image']),
                                               fit: BoxFit.fill)),
                                     ),
                                   ],
                                 ),
                               ),
                             );
-                          }),
+                          },
+                        );
+                      }).toList(),
                     ),
                     Text(
                       "Popular",
@@ -166,13 +171,15 @@ class _FoodServiceState extends State<FoodService> {
                               color: Globals.whiteColor)),
                     ),
                     SizedBox(height: getDeviceHeight(context) * 0.01),
-                    SizedBox(
-                      height: getDeviceHeight(context) * 0.2,
-                      child: ListView.builder(
-                          itemCount: popular.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
+                    CarouselSlider(
+                      options: CarouselOptions(
+                        height: getDeviceHeight(context) * 0.2,
+                        autoPlay: true,
+                        viewportFraction: 0.5,
+                      ),
+                      items: popular.map((index) {
+                        return Builder(
+                          builder: (BuildContext context) {
                             return SizedBox(
                               width: getDeviceWidth(context) * 0.45,
                               child: InkWell(
@@ -182,8 +189,7 @@ class _FoodServiceState extends State<FoodService> {
                                       MaterialPageRoute(
                                           builder: (context) =>
                                               ImagePreviewScreen(
-                                                  imageName: popular[index]
-                                                      ['image'])));
+                                                  imageName: index['image'])));
                                 },
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -195,15 +201,16 @@ class _FoodServiceState extends State<FoodService> {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           image: DecorationImage(
-                                              image: AssetImage(
-                                                  popular[index]['image']),
+                                              image: AssetImage(index['image']),
                                               fit: BoxFit.fill)),
                                     ),
                                   ],
                                 ),
                               ),
                             );
-                          }),
+                          },
+                        );
+                      }).toList(),
                     ),
                     Text(
                       "SHOWING THE WORLD, A NEW YOU:",
@@ -223,38 +230,78 @@ class _FoodServiceState extends State<FoodService> {
                               const TextStyle(color: Globals.whiteColor)),
                     ),
                     const SizedBox(height: 10),
-                    Text(
-                      "A visual representation always appeals to the eye. But an accurate visual representation serves the best. We do the best photography of your food and restaurant, all your services, events and much more through our photography. Our photography services are designed in a manner to give you an original and attractive look. We give you the finest food photography that will appeal to customers and trigger them to order your food. Food photography basically sounds like photos taken but capturing images in the best lighting and use it accurately to promote your restaurant services on social media and websites. We guarantee that our photography especially our restaurant photography will always be up to the mark and will help you attain more customers digitally. Our services are designed to maximize the reach of your business, therefore we put in all our dedication and soul to bring out the best pictures that perfectly fit your business nature and its requirements.",
-                      textAlign: TextAlign.justify,
-                      style: GoogleFonts.montserrat(
-                          textStyle:
-                              const TextStyle(color: Globals.whiteColor)),
+                    Visibility(
+                      visible: !readMore,
+                      child: InkWell(
+                        onTap: () {
+                          setState(() {
+                            readMore = true;
+                          });
+                        },
+                        child: Text(
+                          "Read More",
+                          textAlign: TextAlign.justify,
+                          style: GoogleFonts.montserrat(
+                              textStyle:
+                                  const TextStyle(color: Globals.whiteColor)),
+                        ),
+                      ),
                     ),
-                    const SizedBox(height: 30),
-                    Text(
-                      "COVERING EVENTS:",
-                      style: GoogleFonts.playfairDisplay(
-                          textStyle: const TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                              color: Globals.whiteColor)),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Our photography services are not just limited to product photography, we also offer our services to make your events memorable be it any event photography or corporate team photography. We put in all our zeal and zest to capture the moment in a way that leaves an everlasting impression in your mind. We cover all types of events and ensure to work according to the nature of the event we cover. Our focus is to give our best in everything we do to keep our clients satisfied. If you are looking for someone to trust with your events AA digitals is the perfect choice for your business.",
-                      textAlign: TextAlign.justify,
-                      style: GoogleFonts.montserrat(
-                          textStyle:
-                              const TextStyle(color: Globals.whiteColor)),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Let us take the charge while you sit back and relax. We will surely give you outcomes that are worth trusting. AA Digital Solutions is a team of experts who are just not skilled in their field but are also experienced and know how to bring out paramount results. Trust us and we will never let you down.",
-                      textAlign: TextAlign.justify,
-                      style: GoogleFonts.montserrat(
-                          textStyle:
-                              const TextStyle(color: Globals.whiteColor)),
+                    Visibility(
+                      visible: readMore,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "A visual representation always appeals to the eye. But an accurate visual representation serves the best. We do the best photography of your food and restaurant, all your services, events and much more through our photography. Our photography services are designed in a manner to give you an original and attractive look. We give you the finest food photography that will appeal to customers and trigger them to order your food. Food photography basically sounds like photos taken but capturing images in the best lighting and use it accurately to promote your restaurant services on social media and websites. We guarantee that our photography especially our restaurant photography will always be up to the mark and will help you attain more customers digitally. Our services are designed to maximize the reach of your business, therefore we put in all our dedication and soul to bring out the best pictures that perfectly fit your business nature and its requirements.",
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.montserrat(
+                                textStyle:
+                                    const TextStyle(color: Globals.whiteColor)),
+                          ),
+                          const SizedBox(height: 30),
+                          Text(
+                            "COVERING EVENTS:",
+                            style: GoogleFonts.playfairDisplay(
+                                textStyle: const TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1,
+                                    color: Globals.whiteColor)),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            "Our photography services are not just limited to product photography, we also offer our services to make your events memorable be it any event photography or corporate team photography. We put in all our zeal and zest to capture the moment in a way that leaves an everlasting impression in your mind. We cover all types of events and ensure to work according to the nature of the event we cover. Our focus is to give our best in everything we do to keep our clients satisfied. If you are looking for someone to trust with your events AA digitals is the perfect choice for your business.",
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.montserrat(
+                                textStyle:
+                                    const TextStyle(color: Globals.whiteColor)),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            "Let us take the charge while you sit back and relax. We will surely give you outcomes that are worth trusting. AA Digital Solutions is a team of experts who are just not skilled in their field but are also experienced and know how to bring out paramount results. Trust us and we will never let you down.",
+                            textAlign: TextAlign.justify,
+                            style: GoogleFonts.montserrat(
+                                textStyle:
+                                    const TextStyle(color: Globals.whiteColor)),
+                          ),
+                          const SizedBox(height: 10),
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                readMore = false;
+                              });
+                            },
+                            child: Text(
+                              "Read less",
+                              textAlign: TextAlign.justify,
+                              style: GoogleFonts.montserrat(
+                                  textStyle: const TextStyle(
+                                      color: Globals.whiteColor)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 50),
                   ],

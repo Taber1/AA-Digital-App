@@ -23,7 +23,7 @@ class DrawerScreen extends StatelessWidget {
             sigmaY: 5.0,
           ),
           child: SizedBox(
-            height: getDeviceHeight(context) * 0.3,
+            height: getDeviceHeight(context),
             width: getDeviceWidth(context) * 0.5,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(30),
@@ -34,8 +34,9 @@ class DrawerScreen extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 50, horizontal: 15),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      SizedBox(height: getDeviceHeight(context) * 0.05),
                       InkWell(
                         onTap: () {
                           Navigator.push(
@@ -57,6 +58,7 @@ class DrawerScreen extends StatelessWidget {
                           ],
                         ),
                       ),
+                      SizedBox(height: getDeviceHeight(context) * 0.01),
                       InkWell(
                         onTap: () {
                           Navigator.push(
@@ -78,65 +80,164 @@ class DrawerScreen extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Globals().launchIt("website",
-                                  "https://www.facebook.com/profile.php?id=100081826726161&ref=pages_you_manage");
-                            },
-                            child: const CircleAvatar(
-                              backgroundColor: Globals.blueColor,
+                      SizedBox(height: getDeviceHeight(context) * 0.01),
+                      InkWell(
+                        onTap: () {
+                          Globals().launchIt("website",
+                              "https://www.facebook.com/profile.php?id=100081826726161&ref=pages_you_manage");
+                        },
+                        child: Row(
+                          children: const [
+                            CircleAvatar(
+                              backgroundColor: Globals.transparentColor,
                               child: Icon(
                                 FontAwesomeIcons.facebook,
                                 color: Globals.whiteColor,
+                                size: 30,
                               ),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Globals().launchIt("website",
-                                  "https://www.instagram.com/aa.digital_solutions/");
-                            },
-                            child: const CircleAvatar(
-                              backgroundColor: Globals.orangeColor,
+                            SizedBox(width: 10),
+                            Text(
+                              "Facebook",
+                              style: TextStyle(
+                                  fontSize: 20, color: Globals.whiteColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: getDeviceHeight(context) * 0.01),
+                      InkWell(
+                        onTap: () {
+                          Globals().launchIt("website",
+                              "https://www.instagram.com/aa.digital_solutions/");
+                        },
+                        child: Row(
+                          children: const [
+                            CircleAvatar(
+                              backgroundColor: Globals.transparentColor,
                               child: Icon(
                                 FontAwesomeIcons.instagram,
                                 color: Globals.whiteColor,
+                                size: 30,
                               ),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Globals().launchIt("website",
-                                  "https://www.linkedin.com/company/aa-digital-solutions/");
-                            },
-                            child: const CircleAvatar(
-                              backgroundColor: Globals.lightBlue,
+                            SizedBox(width: 10),
+                            Text(
+                              "Instagram",
+                              style: TextStyle(
+                                  fontSize: 20, color: Globals.whiteColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: getDeviceHeight(context) * 0.01),
+                      InkWell(
+                        onTap: () {
+                          Globals().launchIt("website",
+                              "https://www.linkedin.com/company/aa-digital-solutions/");
+                        },
+                        child: Row(
+                          children: const [
+                            CircleAvatar(
+                              backgroundColor: Globals.transparentColor,
                               child: Icon(
                                 FontAwesomeIcons.linkedinIn,
                                 color: Globals.whiteColor,
+                                size: 30,
                               ),
                             ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Globals().launchIt("website",
-                                  "https://www.youtube.com/channel/UCpOtPH8pAlG2g8IJeas3XPA");
-                            },
-                            child: const CircleAvatar(
-                              backgroundColor: Globals.redColorPrimary,
+                            SizedBox(width: 10),
+                            Text(
+                              "LinkedIn",
+                              style: TextStyle(
+                                  fontSize: 20, color: Globals.whiteColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: getDeviceHeight(context) * 0.01),
+                      InkWell(
+                        onTap: () {
+                          Globals().launchIt("website",
+                              "https://www.youtube.com/channel/UCpOtPH8pAlG2g8IJeas3XPA");
+                        },
+                        child: Row(
+                          children: const [
+                            CircleAvatar(
+                              backgroundColor: Globals.transparentColor,
                               child: Icon(
                                 FontAwesomeIcons.youtube,
-                                size: 20,
                                 color: Globals.whiteColor,
+                                size: 30,
                               ),
                             ),
-                          ),
-                        ],
-                      )
+                            SizedBox(width: 10),
+                            Text(
+                              "Youtube",
+                              style: TextStyle(
+                                  fontSize: 20, color: Globals.whiteColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //   children: [
+                      //     InkWell(
+                      //       onTap: () {
+                      //         Globals().launchIt("website",
+                      //             "https://www.facebook.com/profile.php?id=100081826726161&ref=pages_you_manage");
+                      //       },
+                      //       child: const CircleAvatar(
+                      //         backgroundColor: Globals.blueColor,
+                      //         child: Icon(
+                      //           FontAwesomeIcons.facebook,
+                      //           color: Globals.whiteColor,
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     InkWell(
+                      //       onTap: () {
+                      //         Globals().launchIt("website",
+                      //             "https://www.instagram.com/aa.digital_solutions/");
+                      //       },
+                      //       child: const CircleAvatar(
+                      //         backgroundColor: Globals.orangeColor,
+                      //         child: Icon(
+                      //           FontAwesomeIcons.instagram,
+                      //           color: Globals.whiteColor,
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     InkWell(
+                      //       onTap: () {
+                      //         Globals().launchIt("website",
+                      //             "https://www.linkedin.com/company/aa-digital-solutions/");
+                      //       },
+                      //       child: const CircleAvatar(
+                      //         backgroundColor: Globals.lightBlue,
+                      //         child: Icon(
+                      //           FontAwesomeIcons.linkedinIn,
+                      //           color: Globals.whiteColor,
+                      //         ),
+                      //       ),
+                      //     ),
+                      //     InkWell(
+                      //       onTap: () {
+                      //         Globals().launchIt("website",
+                      //             "https://www.youtube.com/channel/UCpOtPH8pAlG2g8IJeas3XPA");
+                      //       },
+                      //       child: const CircleAvatar(
+                      //         backgroundColor: Globals.redColorPrimary,
+                      //         child: Icon(
+                      //           FontAwesomeIcons.youtube,
+                      //           size: 20,
+                      //           color: Globals.whiteColor,
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ],
+                      // )
                     ],
                   ),
                 ),

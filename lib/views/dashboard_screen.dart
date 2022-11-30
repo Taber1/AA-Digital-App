@@ -108,7 +108,7 @@ class DashboardScreen extends StatelessWidget {
                               height: getDeviceHeight(context) * 0.35,
                               width: getDeviceWidth(context) * 0.4,
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(10),
@@ -123,6 +123,7 @@ class DashboardScreen extends StatelessWidget {
                                       height: getDeviceHeight(context) * 0.01),
                                   Text(
                                       "Online Payment System and Credit Card Processing",
+                                      textAlign: TextAlign.center,
                                       style: GoogleFonts.montserrat(
                                         textStyle: const TextStyle(
                                             color: Globals.whiteColor,
@@ -207,7 +208,7 @@ class DashboardScreen extends StatelessWidget {
         height: getDeviceHeight(context) * 0.28,
         width: getDeviceWidth(context) * 0.4,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -220,6 +221,7 @@ class DashboardScreen extends StatelessWidget {
             ),
             SizedBox(height: getDeviceHeight(context) * 0.01),
             Text(title,
+                textAlign: TextAlign.center,
                 style: GoogleFonts.montserrat(
                   textStyle: const TextStyle(
                       color: Globals.whiteColor,

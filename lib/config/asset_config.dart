@@ -6,13 +6,13 @@ class AssetConfig {
   static const String kMenuHome = "assets/images/new/menu-design.png";
   static const String kWebHome = "assets/images/new/web-design.png";
   static const String kDigiPresenceHome =
-      "assets/images/new/digital-presence.png";
+      "assets/images/new/digital-presence.jpg";
   static const String kDigiStrategyHome =
-      "assets/images/new/digital-strategy.png";
+      "assets/images/new/digital-strategy.jpg";
   static const String kMediaMarketingHome =
-      "assets/images/new/media-marketing.png";
+      "assets/images/new/media-marketing.jpg";
   static const String kOnlinePaymentHome =
-      "assets/images/new/online-payment.png";
+      "assets/images/new/online-payment.jpg";
   static const String kRisingCostHome = "assets/images/new/rising-cost.png";
   static const String kMail = "assets/images/new/mail.png";
   static const String kPhone = "assets/images/new/phone.png";

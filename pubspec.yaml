@@ -51,6 +51,7 @@ dev_dependencies:
   dropdown_textfield: ^1.0.7
   http: ^0.13.5
   font_awesome_flutter: ^10.2.1
+  carousel_slider: ^4.1.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
