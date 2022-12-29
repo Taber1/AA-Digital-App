@@ -90,7 +90,7 @@ class _FoodServiceState extends State<FoodService> {
                   children: [
                     SizedBox(height: getDeviceHeight(context) * 0.4),
                     Text(
-                      "Photography",
+                      "Food Photography",
                       style: GoogleFonts.playfairDisplay(
                           textStyle: const TextStyle(
                               fontSize: 30,

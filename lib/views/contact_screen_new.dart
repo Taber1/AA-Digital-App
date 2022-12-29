@@ -139,7 +139,8 @@ class _ContactScreenNewState extends State<ContactScreenNew> {
                                 DropDownValueModel(
                                     name: 'Select', value: "Select"),
                                 DropDownValueModel(
-                                    name: 'Photography', value: "Photography"),
+                                    name: 'Foood Photography',
+                                    value: "Food Photography"),
                                 DropDownValueModel(
                                     name: 'Menu Design', value: "Menu Design"),
                                 DropDownValueModel(
@@ -154,10 +155,8 @@ class _ContactScreenNewState extends State<ContactScreenNew> {
                                     name: 'Digital Presence',
                                     value: "Digital Presence"),
                                 DropDownValueModel(
-                                    name:
-                                        'Online Payment System and Credit Card Processing',
-                                    value:
-                                        "Online Payment System and Credit Card Processing"),
+                                    name: 'Credit Card Processing Service',
+                                    value: "Credit Card Processing Service"),
                                 DropDownValueModel(
                                     name: 'Rising Cost', value: "Rising Cost"),
                                 DropDownValueModel(

@@ -36,7 +36,7 @@ class DashboardScreen extends StatelessWidget {
                     children: [
                       SizedBox(height: getDeviceHeight(context) * 0.1),
                       Text(
-                        "Find the solution to your business problems",
+                        "Find the solution to your Digital, Online and Marketing needs",
                         style: GoogleFonts.playfairDisplay(
                             textStyle: const TextStyle(
                                 color: Globals.whiteColor,
@@ -59,7 +59,7 @@ class DashboardScreen extends StatelessWidget {
                           serviceCard(
                               context: context,
                               image: AssetConfig.kFoodHome,
-                              title: "Photography"),
+                              title: "Food Photography"),
                           serviceCard(
                               context: context,
                               image: AssetConfig.kMenuHome,
@@ -121,8 +121,7 @@ class DashboardScreen extends StatelessWidget {
                                   ),
                                   SizedBox(
                                       height: getDeviceHeight(context) * 0.01),
-                                  Text(
-                                      "Online Payment System and Credit Card Processing",
+                                  Text("Credit Card Processing Service",
                                       textAlign: TextAlign.center,
                                       style: GoogleFonts.montserrat(
                                         textStyle: const TextStyle(

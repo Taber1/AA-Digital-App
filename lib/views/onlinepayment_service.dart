@@ -52,7 +52,7 @@ class OnlinePaymentService extends StatelessWidget {
                   children: [
                     SizedBox(height: getDeviceHeight(context) * 0.45),
                     Text(
-                      "Online Payment System and Credit Card Processing",
+                      "Credit Card Processing Service",
                       style: GoogleFonts.playfairDisplay(
                           textStyle: const TextStyle(
                               fontSize: 30,
